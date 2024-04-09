@@ -1,17 +1,41 @@
 
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Nav = () => {
-  
+    const { user, logOutUser } = useContext(AuthContext);
+
+
     const links = <>
-    <li className="font-medium"><NavLink to={'/'}>Home</NavLink></li>
-    <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li>
-    <li className="font-medium"><NavLink to={'/faq'}>FAQ ?</NavLink></li>
+        <li className="font-medium"><NavLink to={'/'}>Home</NavLink></li>
+        <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li>
+        <li className="font-medium"><NavLink to={'/faq'}>FAQ ?</NavLink></li>
     </>
+
+
+    const handleLogOut = () => {
+        logOutUser()
+            .then(() => {
+                toast.success("Logout Successfully");
+
+            })
+            .catch((error) => {
+                toast.error(error.message);
+
+            })
+    }
+
+
+
+
     return (
         <div>
-            
+
 
 
             <div className="navbar bg-base-100">
@@ -24,21 +48,32 @@ const Nav = () => {
                             {
                                 links
                             }
-                           
+
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl font-bold">HomelyHaven</a>
+                    <a className="btn btn-ghost lg:text-xl text-base font-bold">HomelyHaven</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-2">
                         {
                             links
                         }
-                        
+
                     </ul>
                 </div>
                 <div className="navbar-end">
-                  <Link to={'/login'}><button className="btn">Login</button></Link>
+                    {user ?
+                        <div className="flex  justify-center items-center gap-2">
+                            <div className="tooltip tooltip-bottom lg:w-14 w-10 rounded-full" data-tip={'akash sorker'}>
+                                <img className="w-full rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                            <button onClick={handleLogOut} className="btn lg:text-base text-xs">Logout</button>
+
+
+
+                        </div>
+                        : <Link to={'/login'}><button className="btn">Login</button></Link>
+                    }
                 </div>
             </div>
 

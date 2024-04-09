@@ -113,7 +113,7 @@ const Register = () => {
 
 
                 <div className="text-center ">
-                    <p className="font-medium mt-6 text-sm">Do not have an account ?   <Link to={'/login'} className="btn-active text-purple-700 btn-link">Login</Link></p>
+                    <p className="font-medium mt-6 text-sm">have an account ?   <Link to={'/login'} className="btn-active text-purple-700 btn-link">Login</Link></p>
                 </div>
 
                 <div className="text-center">
