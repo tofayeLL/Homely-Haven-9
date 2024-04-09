@@ -7,6 +7,11 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
+
+    const [successLogin, setSuccessLogin] = useState('');
+    const [errorLogin, setErrorLogin] = useState('');
+
+
     const {signInUser} = useContext(AuthContext);
     // console.log(signInUser)
 
@@ -19,6 +24,18 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
+
+
+
+        // validation for password
+        if (password.length < 6) {
+            setErrorLogin('passwords must be 6 characters');
+            return;
+        }
+        if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
+            setErrorLogin('must be added at least one small and capital letter');
+            return;
+        }
 
         // sign in user
         signInUser(email, password)

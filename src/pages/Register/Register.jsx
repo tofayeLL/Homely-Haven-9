@@ -3,11 +3,17 @@ import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const Register = () => {
 
     const [showPass, setShowPass] = useState(false);
-
+    const [errorRegister, setErrorRegister] = useState('');
     const { createUser } = useContext(AuthContext);
 
 
@@ -17,20 +23,40 @@ const Register = () => {
     const handleLogin = (e) => {
         e.preventDefault()
         const form = new FormData(e.currentTarget);
-
         const name = form.get('name');
         const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, email, photo, password);
 
+
+
+        // validation for password
+        setErrorRegister('');
+
+        if (password.length < 6) {
+
+            return toast.error(" passwords must be 6 characters!");
+        }
+        if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
+
+            return toast.warn("password must have small and capital letter!");
+        }
+
+
+
+
         // create user
         createUser(email, password)
             .then((result) => {
                 console.log(result.user);
+
+                toast.success("Registration complete Successfully")
+                e.target.reset();
             })
             .catch((error) => {
-                console.log(error.message);
+                setErrorRegister(error.message);
+
             })
 
     }
@@ -91,7 +117,10 @@ const Register = () => {
                     <p className="font-medium mt-6 text-sm">Do not have an account ?   <Link to={'/login'} className="btn-active text-purple-700 btn-link">Login</Link></p>
                 </div>
 
+                <div className="text-center">
 
+                    <p className="text-red-500 text-semibold">{errorRegister.replace('auth/', '')}</p>
+                </div>
 
 
             </div>
