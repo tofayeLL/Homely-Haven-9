@@ -1,18 +1,33 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
+    const {signInUser} = useContext(AuthContext);
+    // console.log(signInUser)
 
 
 
 
     const handleLogin = (e) => {
         e.preventDefault()
-        console.log('click login')
+        const form = new FormData(e.currentTarget)
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email, password);
+
+        // sign in user
+        signInUser(email, password)
+        .then((result) => {
+            console.log(result.user);
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
     }
 
 

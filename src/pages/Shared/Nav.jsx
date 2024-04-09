@@ -1,6 +1,9 @@
+
 import { Link, NavLink } from "react-router-dom";
 
+
 const Nav = () => {
+  
     const links = <>
     <li className="font-medium"><NavLink to={'/'}>Home</NavLink></li>
     <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li>
@@ -8,6 +11,7 @@ const Nav = () => {
     </>
     return (
         <div>
+            
 
 
             <div className="navbar bg-base-100">

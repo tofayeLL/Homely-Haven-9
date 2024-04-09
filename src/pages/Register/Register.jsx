@@ -1,18 +1,38 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
 
     const [showPass, setShowPass] = useState(false);
+
+    const { createUser } = useContext(AuthContext);
+
 
 
 
 
     const handleLogin = (e) => {
         e.preventDefault()
-        console.log('click register')
+        const form = new FormData(e.currentTarget);
+
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, email, photo, password);
+
+        // create user
+        createUser(email, password)
+            .then((result) => {
+                console.log(result.user);
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
+
     }
 
 
