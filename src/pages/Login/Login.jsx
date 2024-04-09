@@ -4,20 +4,15 @@ import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
 
-    const [successLogin, setSuccessLogin] = useState('');
-    const [errorLogin, setErrorLogin] = useState('');
-
-
-    const {signInUser} = useContext(AuthContext);
-    // console.log(signInUser)
-
-
-
-
+    const { signInUser } = useContext(AuthContext);
+  
     const handleLogin = (e) => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
@@ -26,25 +21,15 @@ const Login = () => {
         console.log(email, password);
 
 
-
-        // validation for password
-        if (password.length < 6) {
-            setErrorLogin('passwords must be 6 characters');
-            return;
-        }
-        if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
-            setErrorLogin('must be added at least one small and capital letter');
-            return;
-        }
-
         // sign in user
         signInUser(email, password)
-        .then((result) => {
-            console.log(result.user);
-        })
-        .catch((error) => {
-            console.log(error.message);
-        })
+            .then((result) => {
+                console.log(result.user);
+                e.target.reset();
+            })
+            .catch((error) => {
+                toast.error(error.message.replace('auth/', 'username or password-').replace('-credential', ''));
+            })
     }
 
 
@@ -101,9 +86,7 @@ const Login = () => {
                     <p className="font-medium mt-6 text-sm">Do not have an account ?   <Link to={'/register'} className="btn-active text-purple-700 btn-link">Register</Link></p>
                 </div>
 
-
-
-
+            
             </div>
         </div>
     );

@@ -40,7 +40,7 @@ const Register = () => {
         }
         if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
 
-            return toast.warn("password must have small and capital letter!");
+            return toast.error("password must have small and capital letter!");
         }
 
 
@@ -50,7 +50,6 @@ const Register = () => {
         createUser(email, password)
             .then((result) => {
                 console.log(result.user);
-
                 toast.success("Registration complete Successfully")
                 e.target.reset();
             })
