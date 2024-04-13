@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
 
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, googleLogIn } = useContext(AuthContext);
   
     const handleLogin = (e) => {
         e.preventDefault()
@@ -30,6 +30,18 @@ const Login = () => {
             .catch((error) => {
                 toast.error(error.message.replace('auth/', 'username or password-').replace('-credential', ''));
             })
+    }
+
+    // google login
+    const handleGoogleLogin = () => {
+        googleLogIn()
+        .then((result) => {
+            console.log(result.user);
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
+
     }
 
 
@@ -77,7 +89,7 @@ const Login = () => {
 
                 </form>
                 <div className="text-center lg:space-x-3 md:space-x-2">
-                    <Link><button className="btn bg-purple-600 text-white"><FaGoogle className="text-xl" ></FaGoogle> Login with Google</button></Link>
+                    <Link><button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white"><FaGoogle className="text-xl" ></FaGoogle> Login with Google</button></Link>
                     <Link><button className="btn bg-purple-600 text-white"><FaGithub className="text-xl"></FaGithub>   Login with Github</button></Link>
                 </div>
 

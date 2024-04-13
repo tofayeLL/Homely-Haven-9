@@ -14,7 +14,7 @@ const Register = () => {
 
     const [showPass, setShowPass] = useState(false);
     const [errorRegister, setErrorRegister] = useState('');
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
 
 
@@ -50,7 +50,11 @@ const Register = () => {
         createUser(email, password)
             .then((result) => {
                 console.log(result.user);
-                toast.success("Registration complete Successfully")
+                toast.success("Registration complete Successfully");
+
+                // update user profile
+                updateUserProfile(name, photo)
+                
                 e.target.reset();
             })
             .catch((error) => {
