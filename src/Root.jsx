@@ -7,7 +7,7 @@ const Root = () => {
     const navigation = useNavigation()
     return (
         <div className="container mx-auto lg:px-20 md:px-16 px-2 font-poppins">
-            <div className="mb-10 mt-4">
+            <div className="lg:mb-2 mb-0">
                 <Nav></Nav>
             </div>
             {
