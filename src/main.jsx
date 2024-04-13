@@ -12,6 +12,8 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Register from './pages/Register/Register';
 import AuthProvider from './providers/AuthProvider';
 import { ToastContainer } from 'react-toastify';
+import Faq from './pages/Faq/Faq';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 
 const router = createBrowserRouter([
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path:'/faq',
+        element:<PrivateRoutes><Faq></Faq></PrivateRoutes>
       }
     ]
   },

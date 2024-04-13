@@ -5,14 +5,17 @@ import { FiEyeOff } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from 'react-toastify';
-
 import 'react-toastify/dist/ReactToastify.css';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
 
-    const { signInUser, googleLogIn } = useContext(AuthContext);
-  
+    const { signInUser, googleLogIn, gitHubLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    
     const handleLogin = (e) => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
@@ -25,7 +28,9 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 console.log(result.user);
+              
                 e.target.reset();
+                navigate(location?.state ? location.state : '/') ;
             })
             .catch((error) => {
                 toast.error(error.message.replace('auth/', 'username or password-').replace('-credential', ''));
@@ -37,13 +42,25 @@ const Login = () => {
         googleLogIn()
         .then((result) => {
             console.log(result.user);
+            navigate(location?.state ? location.state : '/') ;
         })
         .catch((error) => {
             console.log(error.message);
         })
 
     }
+    // github login
+    const handleGitLogin = () => {
+        gitHubLogin()
+        .then((result) => {
+            console.log(result.user);
+            navigate(location?.state ? location.state : '/') ;
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
 
+    }
 
 
 
@@ -90,7 +107,7 @@ const Login = () => {
                 </form>
                 <div className="text-center lg:space-x-3 md:space-x-2">
                     <Link><button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white"><FaGoogle className="text-xl" ></FaGoogle> Login with Google</button></Link>
-                    <Link><button className="btn bg-purple-600 text-white"><FaGithub className="text-xl"></FaGithub>   Login with Github</button></Link>
+                    <Link><button onClick={handleGitLogin} className="btn bg-purple-600 text-white"><FaGithub className="text-xl"></FaGithub>   Login with Github</button></Link>
                 </div>
 
 

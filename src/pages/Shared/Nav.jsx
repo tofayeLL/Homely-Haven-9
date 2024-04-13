@@ -16,6 +16,10 @@ const Nav = () => {
         <li className="font-medium"><NavLink to={'/'}>Home</NavLink></li>
         <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li>
         <li className="font-medium"><NavLink to={'/faq'}>FAQ ?</NavLink></li>
+       {/*  {
+            user && 
+            <li className="font-medium"><NavLink to={'/faq'}>FAQ ?</NavLink></li>
+        } */}
     </>
 
 
