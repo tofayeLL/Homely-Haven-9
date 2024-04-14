@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Nav = () => {
     const { user, logOutUser } = useContext(AuthContext);
-    console.log(user);
+    
 
 
     const links = <>

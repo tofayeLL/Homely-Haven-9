@@ -1,7 +1,6 @@
-// import React, { useRef, useState } from 'react';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 
 // Import Swiper styles
 import 'swiper/css';
@@ -9,6 +8,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Navigation } from 'swiper/modules';
+// import slider image
 import slider1 from '../../../public/images/slider1.jpg';
 import slider2 from '../../../public/images/slider2.jpg';
 import slider3 from '../../../public/images/slider3.jpg';
@@ -41,14 +41,6 @@ const Banner = () => {
                 <SwiperSlide >
                     <img src={slider6} className="w-full rounded-lg " />
                 </SwiperSlide>
-
-
-
-                {/* <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
 
             </Swiper>
 

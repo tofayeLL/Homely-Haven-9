@@ -1,9 +1,9 @@
 [
     {
-        "image": "single_family_home.jpg",
-        "estate_title": "Spacious Single-family Home",
+        "image": "https://i.ibb.co/7KWKKWK/image1.jpg",
+        "estate_title": "Single-family Home",
         "id": 1,
-        "segment_name": "Single-family homes",
+        "segment_name": "Spacious Single-family homes",
         "description": "Beautiful single-family home with ample space and modern amenities.",
         "price": "$500,000",
         "status": "sale",
@@ -16,7 +16,7 @@
         ]
     },
     {
-        "image": "townhouse.jpg",
+        "image": "https://i.ibb.co/zPpG5gx/image2.jpg",
         "estate_title": "Cozy Townhouse",
         "id": 2,
         "segment_name": "Townhouses",
@@ -32,7 +32,7 @@
         ]
     },
     {
-        "image": "apartment.jpg",
+        "image": "https://i.ibb.co/Qp3Tj23/image3.jpg",
         "estate_title": "Modern Apartment",
         "id": 3,
         "segment_name": "Apartments",
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "image": "student_housing.jpg",
+        "image": "https://i.ibb.co/3zC5dHm/image4.jpg",
         "estate_title": "Student Housing Complex",
         "id": 4,
         "segment_name": "Student housing",
@@ -64,7 +64,7 @@
         ]
     },
     {
-        "image": "senior_living.jpg",
+        "image": "https://i.ibb.co/gTkYQqw/image5.jpg",
         "estate_title": "Senior Living Community",
         "id": 5,
         "segment_name": "Senior living communities",
@@ -80,7 +80,7 @@
         ]
     },
     {
-        "image": "vacation_rental.jpg",
+        "image": "https://i.ibb.co/XDgr9Qj/image6.jpg",
         "estate_title": "Beachfront Vacation Rental",
         "id": 6,
         "segment_name": "Vacation rentals",

@@ -14,6 +14,7 @@ import AuthProvider from './providers/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import Faq from './pages/Faq/Faq';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
+import FeaturedDetails from './pages/FeaturedDetails/FeaturedDetails';
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
       {
         path:'/faq',
         element:<PrivateRoutes><Faq></Faq></PrivateRoutes>
+      },
+      {
+        path:'/card/:id',
+        element:<FeaturedDetails></FeaturedDetails>,
+        loader:() => fetch('/data.json')
       }
     ]
   },
