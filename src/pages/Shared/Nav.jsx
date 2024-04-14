@@ -40,11 +40,11 @@ const Nav = () => {
 
 
     return (
-        <div>
+        <div className="lg:mb-2 mb-0 container mx-auto lg:px-20 md:px-16 px-2">
 
 
 
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +69,7 @@ const Nav = () => {
                 </div>
                 <div className="navbar-end">
                     {user ?
-                        <div className="flex  justify-center items-center gap-2 p-4">
+                        <div className="flex  justify-center items-center gap-2 ">
                             <div className="tooltip tooltip-bottom lg:w-14 w-12 rounded-full border-[2px] border-green-400 " data-tip={user?.displayName || 'Tofayel'}>
                                 <img className="w-full rounded-full p-1" alt="Tailwind CSS Navbar component" src={user?.photoURL || 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'} />
                             </div>

@@ -23,7 +23,7 @@ const FeaturedCards = ({ item }) => {
                             <p className="text-lg font-semibold">{price}</p>
                             <p >{area}</p>
                         </div>
-                        <Link to={`/card/${id}`}> <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 0 ">View Details</button></Link>
+                        <Link to={`/card/${id}`}> <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 0 text-white">View Details</button></Link>
                     </div>
 
                 </div>

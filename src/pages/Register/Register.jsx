@@ -6,6 +6,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 
 
@@ -54,7 +55,7 @@ const Register = () => {
 
                 // update user profile
                 updateUserProfile(name, photo)
-                
+
                 e.target.reset();
             })
             .catch((error) => {
@@ -68,6 +69,12 @@ const Register = () => {
 
     return (
         <div className="flex flex-col justify-center items-center">
+
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
+
+
             <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-3 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md">
 
 

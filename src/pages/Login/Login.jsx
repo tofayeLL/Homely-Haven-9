@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
@@ -15,7 +16,7 @@ const Login = () => {
     const { signInUser, googleLogIn, gitHubLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     const handleLogin = (e) => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
@@ -28,9 +29,9 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 console.log(result.user);
-              
+
                 e.target.reset();
-                navigate(location?.state ? location.state : '/') ;
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 toast.error(error.message.replace('auth/', 'username or password-').replace('-credential', ''));
@@ -40,32 +41,39 @@ const Login = () => {
     // google login
     const handleGoogleLogin = () => {
         googleLogIn()
-        .then((result) => {
-            console.log(result.user);
-            navigate(location?.state ? location.state : '/') ;
-        })
-        .catch((error) => {
-            console.log(error.message);
-        })
+            .then((result) => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
 
     }
     // github login
     const handleGitLogin = () => {
         gitHubLogin()
-        .then((result) => {
-            console.log(result.user);
-            navigate(location?.state ? location.state : '/') ;
-        })
-        .catch((error) => {
-            console.log(error.message);
-        })
+            .then((result) => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
 
     }
 
 
 
     return (
+
         <div className="flex flex-col justify-center items-center">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
+
+
+
             <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-4 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md">
 
 
@@ -115,7 +123,7 @@ const Login = () => {
                     <p className="font-medium mt-6 text-sm">Do not have an account ?   <Link to={'/register'} className="btn-active text-purple-700 btn-link">Register</Link></p>
                 </div>
 
-            
+
             </div>
         </div>
     );

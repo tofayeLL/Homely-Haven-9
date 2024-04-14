@@ -17,6 +17,7 @@ import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import FeaturedDetails from './pages/FeaturedDetails/FeaturedDetails';
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,7 +51,14 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider> <RouterProvider router={router} /></AuthProvider>
+ 
+    <AuthProvider>
+      
+       <RouterProvider router={router} />
+        
+      
+       </AuthProvider>
+    
     <ToastContainer />
   </React.StrictMode>,
 )

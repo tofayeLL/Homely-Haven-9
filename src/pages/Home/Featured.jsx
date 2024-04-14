@@ -22,8 +22,8 @@ const Featured = () => {
     return (
         <div>
             
-            <div>
-                <h1 className="text-3xl font-bold">Featured Properties{data.length}</h1>
+            <div className="space-y-3 my-2">
+                <h1 className="text-3xl font-bold">Featured Properties</h1>
                 <p>Browse our latest hot offers</p>
             </div>
 

@@ -1,27 +1,48 @@
+import { Helmet } from "react-helmet";
 
 
 const Faq = () => {
     return (
-        <div>
+        <div className=" border-t py-8">
+             <Helmet>
+                <title>Faq</title>
+            </Helmet>
 
 
-            <section className="bg-slate-200 rounded-lg">
-                <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
+            <section className="bg-slate-200 rounded-lg ">
+                <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8 ">
                     <h2 className="text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
-                    <p className="mt-4 mb-8 ">Sagittis tempor donec id vestibulum viverra. Neque condimentum primis orci at lacus amet bibendum.</p>
+                    <p className="mt-4 mb-8 ">Discover answers to common questions about residential living on HomelyHavens FAQ page. From maximizing space to creating a cozy ambiance, find expert advice for your home.</p>
+
                     <div className="space-y-4">
+
                         <details className="w-full border rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Ex orci laoreet egestas sapien magna egestas scelerisque?</summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">Lectus iaculis orci metus vitae ligula dictum per. Nisl per nullam taciti at adipiscing est. </p>
+
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">What types of residential home services does HomelyHaven offer?</summary>
+
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">HomelyHaven offers a range of residential home services including interior design consultations, home staging for selling or renting properties, home organization services, and home renovation project management. </p>
+
                         </details>
                         <details className="w-full border rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Lorem at arcu rutrum viverra metus sapien venenatis lobortis odio?</summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">Tincidunt ut hac condimentum rhoncus phasellus nostra. Magna porttitor egestas tincidunt neque vehicula potenti. </p>
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">How can I request a consultation for residential home services from HomelyHaven?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">To request a consultation, simply fill out the contact form on the HomelyHaven website with your name, contact information, and a brief description of the services youre interested in. A member of our team will get in touch with you to discuss your needs further. </p>
+                        </details>
+
+                        <details className="w-full border rounded-lg">
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Do you offer virtual consultations for residential home services?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">Yes, HomelyHaven offers virtual consultations for residential home services to accommodate clients who prefer remote meetings or are located outside of our service area. </p>
                         </details>
                         <details className="w-full border rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">Eleifend feugiat sollicitudin laoreet adipiscing bibendum suscipit erat?</summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">Justo libero tellus integer tincidunt justo semper consequat venenatis aliquet imperdiet. Ultricies urna proin fusce nulla pretium sodales vel magna et massa euismod vulputate sed. </p>
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">What sets HomelyHavens residential home services apart from other providers?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">HomelyHaven takes a personalized approach to residential home services, focusing on understanding each clients unique needs and preferences to deliver tailored solutions. Our team of experts combines creativity, professionalism, and attention to detail to ensure exceptional results. </p>
                         </details>
+                        <details className="w-full border rounded-lg">
+                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">How can I learn more about the residential home services offered by HomelyHaven?</summary>
+                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 ">To learn more about our residential home services, including pricing, process, and portfolio, visit the  `Featured Properties`  section of our website or contact us directly with any questions you may have.. </p>
+                        </details>
+
+
+
                     </div>
                 </div>
             </section>

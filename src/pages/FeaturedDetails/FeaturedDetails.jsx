@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 
 
@@ -10,11 +11,15 @@ const FeaturedDetails = () => {
 
 
     return (
-        <div>
+        <div className="border-t">
 
-            <div className="p-5 mx-auto sm:p-10 md:p-16  ">
+            <Helmet>
+                <title>FeatureDetails</title>
+            </Helmet>
 
-                <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
+            <div className="px-5 mx-auto sm:px-10 md:px-16 py-8 ">
+
+                <div className="flex flex-col max-w-4xl mx-auto overflow-hidden rounded p-2">
                     <div className="mb-8">
                         <h1 className="inline-block text-2xl font-semibold sm:text-3xl">{estate_title}</h1>
                         <p>Location:  <span className="opacity-80">{location}</span></p>
@@ -24,7 +29,7 @@ const FeaturedDetails = () => {
                         <img src={image} alt="" className="w-full h-60 sm:h-96 bg-gray-500 rounded-lg" />
                     </div>
 
-                    <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-violet-300">
+                    <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-3xl sm:px-10 sm:mx-12 lg:rounded-md bg-slate-200 ">
 
                         <div className="space-y-4 divide-y">
 
