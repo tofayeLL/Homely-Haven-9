@@ -15,17 +15,20 @@ const Root = () => {
                 {
                     navigation.state === "loading" ?
 
-                        <RotatingLines
-                            visible={true}
-                            height="100"
-                            width="200"
-                            color="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            ariaLabel="rotating-lines-loading"
-                            wrapperStyle={{}}
-                            wrapperClass=""
-                        />
+                        <div className="flex flex-col justify-center items-center">
+                            <RotatingLines
+                                visible={true}
+                                height="100"
+                                width="200"
+                                color="grey"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                ariaLabel="rotating-lines-loading"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                            />
+
+                        </div>
 
                         :
                         <Outlet></Outlet>
