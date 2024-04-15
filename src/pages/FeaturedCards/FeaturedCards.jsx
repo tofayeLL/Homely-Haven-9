@@ -12,7 +12,7 @@ const FeaturedCards = ({ item }) => {
 
     useEffect(() => {
         AOS.init({
-          duration : 800
+          duration : 700
         });
       }, []);
       
@@ -29,7 +29,7 @@ const FeaturedCards = ({ item }) => {
                         <img src={image} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
                     </div>
 
-                    <div className="flex flex-col justify-between p-6 space-y-8" data-aos="fade-down-right">
+                    <div className="flex flex-col justify-between p-6 space-y-8" data-aos="fade-up">
                         <div className="space-y-2" >
                             <h2 className="text-xl font-semibold tracking-wide text-violet-800 ">{estate_title}</h2>
                             <p className="text-lg font-semibold">{price}</p>

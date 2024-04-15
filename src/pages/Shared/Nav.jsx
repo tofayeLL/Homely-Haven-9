@@ -9,17 +9,19 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Nav = () => {
     const { user, logOutUser } = useContext(AuthContext);
-    
+
 
 
     const links = <>
         <li className="font-medium"><NavLink to={'/'}>Home</NavLink></li>
-        <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li>
+        {/* <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li> */}
+
+        {
+            user &&
+            <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li>
+        }
+
         <li className="font-medium"><NavLink to={'/faq'}>FAQ ?</NavLink></li>
-       {/*  {
-            user && 
-            <li className="font-medium"><NavLink to={'/faq'}>FAQ ?</NavLink></li>
-        } */}
     </>
 
 
@@ -40,7 +42,7 @@ const Nav = () => {
 
 
     return (
-        <div className="lg:mb-2 mb-0 container mx-auto lg:px-16 md:px-16 px-2">
+        <div className="lg:mb-3 mb-7 ">
 
 
 
@@ -70,7 +72,7 @@ const Nav = () => {
                 <div className="navbar-end">
                     {user ?
                         <div className="flex  justify-center items-center gap-2 ">
-                            <div className="tooltip tooltip-bottom lg:w-14 w-12 rounded-full border-[2px] border-green-400 " data-tip={user?.displayName || 'Tofayel'}>
+                            <div className="tooltip tooltip-bottom lg:w-14 w-12 rounded-full border-[2px] border-green-400 z-10 " data-tip={user?.displayName || 'Tofayel'}>
                                 <img className="w-full rounded-full p-1" alt="Tailwind CSS Navbar component" src={user?.photoURL || 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'} />
                             </div>
 
