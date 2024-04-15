@@ -17,29 +17,30 @@ import slider5 from '../../../public/images/slider5.jpg';
 import slider6 from '../../../public/images/slider6.jpg';
 
 
+
 const Banner = () => {
     return (
         <div>
 
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper lg:h-[80vh] lg:py-4 md:py-4 py-20 rounded-lg object-cover object-center ">
+            <Swiper navigation={true} modules={[Navigation]} className="mySwiper lg:h-[80vh] lg:py-4 md:py-4 py-20 rounded-lg  ">
 
                 <SwiperSlide >
-                    <img src={slider1}  className="w-full rounded-lg " />
+                    <img src={slider1}  className="w-full rounded-lg object-cover object-center " />
                 </SwiperSlide>
                 <SwiperSlide >
-                    <img src={slider2} className="w-full rounded-lg" />
+                    <img src={slider2} className="w-full rounded-lg object-cover object-center" />
                 </SwiperSlide>
                 <SwiperSlide >
-                    <img src={slider3} className="w-full rounded-lg" />
+                    <img src={slider3} className="w-full rounded-lg object-cover object-center" />
                 </SwiperSlide>
                 <SwiperSlide >
-                    <img src={slider4} className="w-full rounded-lg " />
+                    <img src={slider4} className="w-full rounded-lg object-cover object-center" />
                 </SwiperSlide>
                 <SwiperSlide >
-                    <img src={slider5} className="w-full rounded-lg " />
+                    <img src={slider5} className="w-full rounded-lg object-cover object-center" />
                 </SwiperSlide>
                 <SwiperSlide >
-                    <img src={slider6} className="w-full rounded-lg " />
+                    <img src={slider6} className="w-full rounded-lg object-cover object-center" />
                 </SwiperSlide>
 
             </Swiper>

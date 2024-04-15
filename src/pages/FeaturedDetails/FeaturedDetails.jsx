@@ -11,7 +11,7 @@ const FeaturedDetails = () => {
 
 
     return (
-        <div className="border-t">
+        <div className="border-t ">
 
             <Helmet>
                 <title>FeatureDetails</title>
@@ -26,12 +26,12 @@ const FeaturedDetails = () => {
                     </div>
 
                     <div>
-                        <img src={image} alt="" className="w-full h-60 sm:h-96 bg-gray-500 rounded-lg" />
+                        <img src={image} alt="" className="w-full h-60 sm:h-96 bg-gray-500 rounded-lg object-cover object-center" />
                     </div>
 
                     <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-3xl sm:px-10 sm:mx-12 lg:rounded-md bg-slate-200 ">
 
-                        <div className="space-y-4 divide-y">
+                        <div className="space-y-4 divide-y divide-black">
 
                             <div>
                                 <span className="font-semibold">segmentName</span>
