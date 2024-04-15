@@ -1,24 +1,36 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 
 const FeaturedCards = ({ item }) => {
+
     const { image, estate_title, id, price, area } = item;
+
+    useEffect(() => {
+        AOS.init({
+          duration : 800
+        });
+      }, []);
+      
     return (
         <div className="">
 
             {/* card section */}
-            <div className="">
+            <div className=""  >
 
                 {/* card 1 */}
-                <div className="rounded-md shadow-md my-6">
+                <div className="rounded-md shadow-md my-6 " data-aos="fade-down">
 
-                    <div className="p-6">
+                    <div className="p-6" >
                         <img src={image} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
                     </div>
 
-                    <div className="flex flex-col justify-between p-6 space-y-8">
-                        <div className="space-y-2">
+                    <div className="flex flex-col justify-between p-6 space-y-8" data-aos="fade-down-right">
+                        <div className="space-y-2" >
                             <h2 className="text-xl font-semibold tracking-wide text-violet-800 ">{estate_title}</h2>
                             <p className="text-lg font-semibold">{price}</p>
                             <p >{area}</p>

@@ -40,7 +40,7 @@ const Nav = () => {
 
 
     return (
-        <div className="lg:mb-2 mb-0 container mx-auto lg:px-16 md:px-16 px-2">
+        <div className="lg:mb-2 mb-0 container mx-auto lg:px-20 md:px-16 px-2">
 
 
 

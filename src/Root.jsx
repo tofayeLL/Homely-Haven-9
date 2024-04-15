@@ -11,7 +11,7 @@ const Root = () => {
             <div>
                 <Nav></Nav>
             </div>
-            <div className="container mx-auto lg:px-16 md:px-16 px-2">
+            <div className="container mx-auto lg:px-20 md:px-16 px-2">
                 {
                     navigation.state === "loading" ?
 

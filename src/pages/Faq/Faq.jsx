@@ -1,7 +1,19 @@
 import { Helmet } from "react-helmet";
+// aos package
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 
 const Faq = () => {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 700
+        });
+    }, []);
+
+
     return (
         <div className=" border-t py-8">
              <Helmet>
@@ -9,7 +21,7 @@ const Faq = () => {
             </Helmet>
 
 
-            <section className="bg-slate-200 rounded-lg ">
+            <section className="bg-slate-200 rounded-lg " data-aos="flip-up">
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8 ">
                     <h2 className="text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
                     <p className="mt-4 mb-8 ">Discover answers to common questions about residential living on HomelyHavens FAQ page. From maximizing space to creating a cozy ambiance, find expert advice for your home.</p>

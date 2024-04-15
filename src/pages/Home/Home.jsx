@@ -10,11 +10,11 @@ const Home = () => {
         <title>Home</title>
       </Helmet>
 
-      <div className="py-10">
+      <div className="lg:py-10">
         <Banner></Banner>
       </div>
 
-      <div className="my-14">
+      <div className="lg:my-12 md:my-8 my-4">
         <Featured></Featured>
       </div>
       <div>
