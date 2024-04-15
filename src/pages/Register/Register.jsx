@@ -52,10 +52,8 @@ const Register = () => {
             .then((result) => {
                 console.log(result.user);
                 toast.success("Registration complete Successfully");
-
                 // update user profile
-                updateUserProfile(name, photo)
-
+                updateUserProfile(name, photo);
                 e.target.reset();
             })
             .catch((error) => {

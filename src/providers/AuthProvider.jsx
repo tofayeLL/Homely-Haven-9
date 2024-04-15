@@ -28,12 +28,16 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signOut(auth);
     }
-    const updateUserProfile = (name, photo) => {
+    const updateUserProfile = (name, photo, email) => {
         setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name,
-            photoURL: photo
-        })
+            photoURL: photo,
+            email: email
+        }
+        
+    )
+    
     }
     // google log in with pop up
     const googleLogIn = () => {
@@ -62,8 +66,6 @@ const AuthProvider = ({ children }) => {
 
 
 
-
-
     const userInfo = {
         createUser,
         signInUser,
@@ -73,6 +75,7 @@ const AuthProvider = ({ children }) => {
         googleLogIn,
         loading,
         gitHubLogin
+        
 
 
     }

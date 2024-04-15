@@ -7,7 +7,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
 // import slider image
 import slider1 from '../../../public/images/slider1.jpg';
 import slider2 from '../../../public/images/slider2.jpg';
@@ -18,14 +19,26 @@ import slider6 from '../../../public/images/slider6.jpg';
 
 
 
+
 const Banner = () => {
     return (
         <div>
 
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper lg:h-[80vh] lg:py-4 md:py-4 py-20 rounded-lg  ">
+            <Swiper spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper lg:h-[80vh] lg:py-4 md:py-4 py-20 rounded-lg  ">
 
                 <SwiperSlide >
-                    <img src={slider1}  className="w-full rounded-lg object-cover object-center " />
+                    <img src={slider1} className="w-full rounded-lg object-cover object-center " />
                 </SwiperSlide>
                 <SwiperSlide >
                     <img src={slider2} className="w-full rounded-lg object-cover object-center" />

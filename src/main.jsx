@@ -15,6 +15,7 @@ import { ToastContainer } from 'react-toastify';
 import Faq from './pages/Faq/Faq';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import FeaturedDetails from './pages/FeaturedDetails/FeaturedDetails';
+import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 
 
 
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path:'/update',
+        element: <PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>
+
       },
       {
         path:'/faq',
