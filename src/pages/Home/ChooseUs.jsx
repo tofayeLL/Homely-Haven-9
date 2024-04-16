@@ -41,7 +41,7 @@ const ChooseUs = () => {
 
                 <div className="flex flex-col max-w-6xl mx-auto rounded">
 
-                    <div className="m-4 mx-auto -mt-36 lg:max-w-6xl sm:px-0 sm:mx-12 lg:rounded-md  bg-[#ffffff] shadow-lg " data-aos="fade-down"
+                    <div className="m-4 mx-auto lg:-mt-32 -mt-16 lg:max-w-6xl sm:px-0 sm:mx-12 lg:rounded-md  bg-[#ffffff] shadow-lg border-[1px] border-[#e0e0e2]" data-aos="fade-down"
                         data-aos-easing="linear"
                         data-aos-duration="800">
 

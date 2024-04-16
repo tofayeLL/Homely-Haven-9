@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+// aos package
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -23,7 +24,7 @@ const FeaturedCards = ({ item }) => {
             <div className=""  >
 
                 {/* card 1 */}
-                <div className="rounded-md shadow-md my-6 " data-aos="fade-down">
+                <div className="rounded-md shadow-sm my-6 border-[1px] border-[#e0e0e2] " data-aos="fade-down">
 
                     <div className="p-6" >
                         <img src={image} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
@@ -35,7 +36,7 @@ const FeaturedCards = ({ item }) => {
                             <p className="text-lg font-semibold">{price}</p>
                             <p >{area}</p>
                         </div>
-                        <Link to={`/card/${id}`}> <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 0 text-white">View Details</button></Link>
+                        <Link to={`/card/${id}`}> <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400  text-white">View Details</button></Link>
                     </div>
 
                 </div>
