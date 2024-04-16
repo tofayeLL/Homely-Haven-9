@@ -64,6 +64,7 @@ const Register = () => {
             .catch((error) => {
                 setErrorRegister(error.message);
 
+
             })
 
     }
@@ -133,16 +134,18 @@ const Register = () => {
 
                 </form>
 
+                <div className="text-center">
+
+                    <p className="text-red-500 text-bold">{errorRegister.replace('auth/', '')}</p>
+                </div>
+
 
 
                 <div className="text-center ">
                     <p className="font-medium mt-6 text-sm mr-2">have an account ?   Please  <Link to={'/login'} className="btn-active text-purple-700 btn-link">Login</Link></p>
                 </div>
 
-                <div className="text-center">
 
-                    <p className="text-red-500 text-semibold">{errorRegister.replace('auth/', '')}</p>
-                </div>
 
 
             </div>

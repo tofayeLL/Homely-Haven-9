@@ -4,10 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 // import slider image
 import slider1 from '../../../public/images/slider1.jpg';
@@ -34,7 +34,7 @@ const Banner = () => {
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Autoplay, Pagination]}
                 className="mySwiper lg:h-[80vh] lg:py-4 md:py-4 py-20 rounded-lg  ">
 
                 <SwiperSlide >
