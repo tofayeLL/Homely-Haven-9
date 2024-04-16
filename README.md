@@ -38,6 +38,15 @@ Welcome to Homely Haven, your go-to destination for residential real estate need
 - **Social Media Integration**
   - Stay connected through social media platforms for updates about the Residential properties.
 
+  ###  Npm packages which I have used for the challenges task
+  - **AOS Package**
+  - **Animate.css**
+  - **Swiper slider**
+  
+
+  
+
+
 Feel free to explore our website, [Homely Haven](), and embark on an exciting reading journey!
 
 Thank you for visiting Homely Haven!

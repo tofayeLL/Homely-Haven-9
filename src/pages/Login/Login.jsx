@@ -99,7 +99,7 @@ const Login = () => {
 
                     <div>
                         <p className="mb-1 font-medium">User Email</p>
-                        <input type="email" name="email" placeholder="user email" className="input input-bordered w-full" required />
+                        <input type="email" name="email" placeholder="Email address" className="input input-bordered w-full" required />
                     </div>
 
                     <div >

@@ -101,7 +101,7 @@ const Register = () => {
 
                     <div >
                         <p className="mb-1 font-medium">User Name</p>
-                        <input type="text" name="name" placeholder="user name" className="input input-bordered w-full" />
+                        <input type="text" name="name" placeholder="Username" className="input input-bordered w-full" />
                     </div>
 
                     <div >
@@ -111,7 +111,7 @@ const Register = () => {
 
                     <div>
                         <p className="mb-1 font-medium">User Email</p>
-                        <input type="email" name="email" placeholder="user email" className="input input-bordered w-full" required />
+                        <input type="email" name="email" placeholder="Email address" className="input input-bordered w-full" required />
                     </div>
 
                     <div >
