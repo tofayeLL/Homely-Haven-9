@@ -21,6 +21,7 @@ const Nav = () => {
             <li className="font-medium"><NavLink to={'/update'}>Update Profile</NavLink></li>
         }
 
+        <li className="font-medium"><NavLink to={'/contact'}>Contact us</NavLink></li>
         <li className="font-medium"><NavLink to={'/faq'}>FAQ ?</NavLink></li>
     </>
 

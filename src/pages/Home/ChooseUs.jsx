@@ -47,7 +47,7 @@ const ChooseUs = () => {
 
                         <div className="space-y-2 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 place-items-center place-content-center ">
                             {/* 1 */}
-                            <div className='spacey-2 lg:border-r p-4 ' data-aos="zoom-out-right">
+                            <div className='spacey-2 lg:border-r p-4 '  data-aos="zoom-in-down">
                                 <div className='my-6 '>
                                     <img src={home} alt="" className='lg:w-[40%] w-[30%]' />
 
@@ -80,7 +80,7 @@ const ChooseUs = () => {
 
                             </div>
                             {/* 4 */}
-                            <div className='spacey-2 p-4 ' data-aos="zoom-out-left"
+                            <div className='spacey-2 p-4 ' data-aos="zoom-in-up"
                             >
                                 <div className='my-6 text-center'>
                                     <img src={list} alt="" className='lg:w-[40%] w-[30%]' />

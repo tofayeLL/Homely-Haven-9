@@ -124,6 +124,11 @@ const Register = () => {
                         </div>
                     </div>
 
+                    <div className="text-center">
+
+                        <p className="text-red-500 text-bold">{errorRegister.replace('auth/', '')}</p>
+                    </div>
+
 
                     <div>
                         <button className="btn text-white text-lg w-full bg-purple-600" type="submit">Register</button>
@@ -134,10 +139,6 @@ const Register = () => {
 
                 </form>
 
-                <div className="text-center">
-
-                    <p className="text-red-500 text-bold">{errorRegister.replace('auth/', '')}</p>
-                </div>
 
 
 

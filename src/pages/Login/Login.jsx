@@ -38,7 +38,7 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
-                toast.error(error.message.replace('auth/', 'username or password-').replace('-credential', ''));
+                toast.error(error.message.replace('auth/', 'userEmail or password-').replace('-credential', ''));
             })
     }
 

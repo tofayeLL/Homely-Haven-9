@@ -16,6 +16,7 @@ import Faq from './pages/Faq/Faq';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import FeaturedDetails from './pages/FeaturedDetails/FeaturedDetails';
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
+import Contact from './pages/Contact/Contact';
 
 
 
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
       {
         path:'/faq',
         element:<PrivateRoutes><Faq></Faq></PrivateRoutes>
+      },
+      {
+        path:'/contact',
+        element: <Contact></Contact>
+
       },
       {
         path:'/card/:id',
