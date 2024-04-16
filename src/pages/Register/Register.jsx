@@ -8,6 +8,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet";
 
+// aos package
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 
 
@@ -65,6 +70,15 @@ const Register = () => {
 
 
 
+    // use effect for aos scroll animation
+    useEffect(() => {
+        AOS.init({
+            duration: 900
+        });
+    }, []);
+
+
+
     return (
         <div className="flex flex-col justify-center items-center">
 
@@ -73,7 +87,7 @@ const Register = () => {
             </Helmet>
 
 
-            <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-3 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md">
+            <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-3 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md" data-aos="zoom-in-down">
 
 
 
@@ -122,7 +136,7 @@ const Register = () => {
 
 
                 <div className="text-center ">
-                    <p className="font-medium mt-6 text-sm">have an account ?   <Link to={'/login'} className="btn-active text-purple-700 btn-link">Login</Link></p>
+                    <p className="font-medium mt-6 text-sm mr-2">have an account ?   Please  <Link to={'/login'} className="btn-active text-purple-700 btn-link">Login</Link></p>
                 </div>
 
                 <div className="text-center">

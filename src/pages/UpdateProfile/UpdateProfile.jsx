@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+// aos package
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 
 
 const UpdateProfile = () => {
-    const { user, updateUserProfile, setLoading } = useContext(AuthContext);
+    const { user, updateUserProfile, setUser } = useContext(AuthContext);
 
 
     const handleUpdate = (e) => {
@@ -15,16 +20,36 @@ const UpdateProfile = () => {
         const email = form.get('email');
         console.log(name, email, photo);
 
+
         // update user profile 
         updateUserProfile(name, photo, email)
+            .then(
 
-
+                () => setUser(
+                    {
+                        ...user, displayName: name, photoURL: photo
+                    }
+                )
+            )
     }
+
+
+    // use effect for aos
+    useEffect(() => {
+        AOS.init({
+            duration: 800
+        });
+    }, []);
 
 
     return (
 
-        <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-3 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md">
+        <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-3 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md" data-aos="fade-up">
+
+            <Helmet>
+                <title>Update profile</title>
+            </Helmet>
+
 
 
             <div className=" mx-auto text-purple-700">
@@ -51,7 +76,7 @@ const UpdateProfile = () => {
 
 
                 <div>
-                    <button onClick={() => setLoading(false)} className="btn text-white text-lg w-full bg-purple-600" type="submit">Update</button>
+                    <button className="btn text-white text-lg w-full bg-purple-600" type="submit">Update</button>
                 </div>
 
 

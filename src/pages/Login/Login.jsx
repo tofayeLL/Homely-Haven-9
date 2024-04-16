@@ -9,6 +9,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+// aos package
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
@@ -64,6 +68,14 @@ const Login = () => {
     }
 
 
+     // use effect for aos
+     useEffect(() => {
+        AOS.init({
+            duration: 800
+        });
+    }, []);
+
+
 
     return (
 
@@ -74,7 +86,7 @@ const Login = () => {
 
 
 
-            <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-4 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md">
+            <div className="flex flex-col justify-center  lg:w-[100vh] mx-auto space-y-4 my-6 bg-slate-200 shadow-xl lg:px-0 px-5  lg:py-12 py-6 rounded-md" data-aos="fade-down">
 
 
 
@@ -83,7 +95,7 @@ const Login = () => {
                 </div>
 
 
-                <form onSubmit={handleLogin} className="lg:w-[80%] mx-auto space-y-5  rounded-lg ">
+                <form onSubmit={handleLogin} className="lg:w-[80%] mx-auto space-y-5  rounded-lg " >
 
                     <div>
                         <p className="mb-1 font-medium">User Email</p>
@@ -113,14 +125,14 @@ const Login = () => {
 
 
                 </form>
-                <div className="text-center lg:space-x-3 md:space-x-2">
+                <div className="text-center lg:space-x-3 md:space-x-2"  >
                     <Link><button onClick={handleGoogleLogin} className="btn bg-purple-600 text-white"><FaGoogle className="text-xl" ></FaGoogle> Login with Google</button></Link>
                     <Link><button onClick={handleGitLogin} className="btn bg-purple-600 text-white"><FaGithub className="text-xl"></FaGithub>   Login with Github</button></Link>
                 </div>
 
 
-                <div className="text-center ">
-                    <p className="font-medium mt-6 text-sm">Do not have an account ?   <Link to={'/register'} className="btn-active text-purple-700 btn-link">Register</Link></p>
+                <div className="text-center " >
+                    <p className="font-medium mt-6 text-sm mr-2">Do not have an account ?  Please <Link to={'/register'} className="btn-active text-purple-700 btn-link">Register</Link></p>
                 </div>
 
 

@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import logo from "../../../public/images/logo2.png"
+import logo from "../../../public/images/logo.png"
 const Footer = () => {
     return (
         <div className="bg-[#323234] lg:mt-20 mt-8">
