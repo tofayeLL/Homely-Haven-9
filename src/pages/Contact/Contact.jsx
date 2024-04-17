@@ -5,6 +5,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
 
@@ -19,6 +20,10 @@ const Contact = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>Contact</title>
+            </Helmet>
 
 
             <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32   bg-[linear-gradient(45deg,rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(https://i.ibb.co/4SWPknN/choose.jpg)] bg-center bg-cover " data-aos="zoom-in-up">

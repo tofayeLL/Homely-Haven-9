@@ -33,9 +33,9 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 console.log(result.user);
-
                 e.target.reset();
                 navigate(location?.state ? location.state : '/');
+                toast.success("Login Successfully");
             })
             .catch((error) => {
                 toast.error(error.message.replace('auth/', 'userEmail or password-').replace('-credential', ''));
@@ -48,6 +48,7 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user);
                 navigate(location?.state ? location.state : '/');
+                toast.success("Login Successfully");
             })
             .catch((error) => {
                 console.log(error.message);
@@ -60,6 +61,8 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user);
                 navigate(location?.state ? location.state : '/');
+                toast.success("Login Successfully");
+                
             })
             .catch((error) => {
                 console.log(error.message);

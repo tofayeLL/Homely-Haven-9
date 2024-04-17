@@ -46,7 +46,7 @@ const Register = () => {
         }
         if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
 
-            return toast.error("password must have small and capital letter!");
+            return toast.error("password must have included small and capital letter!");
         }
 
 
