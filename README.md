@@ -42,10 +42,6 @@ Welcome to Homely Haven, your go-to destination for residential real estate need
   - **AOS Package**
   - **Animate.css**
   - **Swiper slider**
-  
-
-  
-
 
 Feel free to explore our website, [Homely Haven](https://homely-haven.netlify.app/), and embark on an exciting reading journey!
 
